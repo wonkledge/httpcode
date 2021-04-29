@@ -4,6 +4,6 @@
         "project": "./tsconfig.json"
     },
     "rules": {
-        "max-len": [1,140, 4]
+        "max-len": [1, 140, 4]
     }
 }

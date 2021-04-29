@@ -1,9 +1,12 @@
 {
   "name": "@wonkledge/httpcode",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./lib/src/index.js",
   "types": "./lib/src/index.d.ts",
   "keywords": ["enums","enumeration", "http", "http code", "convention"],
+  "files": [
+    "/lib"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/wonkledge/httpcode.git"

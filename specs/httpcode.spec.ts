@@ -6,7 +6,7 @@ import {
   HTTP_CODE_REDIRECTION,
   HTTP_CODE_SUCCESS, isHttpCodeClientError, isHttpCodeInformation, isHttpCodeRedirection, isHttpCodeServerError,
   isHttpCodeSuccess,
-} from '../src';
+} from '../src/httpcode';
 
 const successCodeDataset = Object.values(HTTP_CODE_SUCCESS).map((httpCode) => [httpCode]);
 const informationCodeDataset = Object.values(HTTP_CODE_INFORMATION).map((httpCode) => [httpCode]);
