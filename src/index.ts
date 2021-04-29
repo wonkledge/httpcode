@@ -32,7 +32,7 @@ export const HTTP_CODE_REDIRECTION = {
   TOO_MANY_REDIRECT: 310,
 } as const;
 
-export const HTTP_CODE_ERROR_CLIENT = {
+export const HTTP_CODE_CLIENT_ERROR = {
   BAD_REQUEST: 400,
   UNAUTHORIZED: 401,
   PAYMENT_REQUIRED: 402,
@@ -68,7 +68,7 @@ export const HTTP_CODE_ERROR_CLIENT = {
   UNRECOVERABLE_ERROR: 456,
 } as const;
 
-export const HTTP_CODE_ERROR_SERVER = {
+export const HTTP_CODE_SERVER_ERROR = {
   INTERNAL_SERVER_ERROR: 500,
   NOT_IMPLEMENTED: 501,
   BAD_GATEWAY: 502,
@@ -88,8 +88,8 @@ export const HTTP_CODE = {
   ...HTTP_CODE_INFORMATION,
   ...HTTP_CODE_SUCCESS,
   ...HTTP_CODE_REDIRECTION,
-  ...HTTP_CODE_ERROR_CLIENT,
-  ...HTTP_CODE_ERROR_SERVER,
+  ...HTTP_CODE_CLIENT_ERROR,
+  ...HTTP_CODE_SERVER_ERROR,
 } as const;
 
 export type HTTPCodeSuccess
@@ -101,11 +101,11 @@ export type HTTPCodeRedirection
 export type HTTPCodeInformation
     = typeof HTTP_CODE_INFORMATION[keyof typeof HTTP_CODE_INFORMATION];
 
-export type HTTPCodeErrorClient
-    = typeof HTTP_CODE_ERROR_CLIENT[keyof typeof HTTP_CODE_ERROR_CLIENT];
+export type HTTPCodeClientError
+    = typeof HTTP_CODE_CLIENT_ERROR[keyof typeof HTTP_CODE_CLIENT_ERROR];
 
-export type HTTPCodeErrorServer
-    = typeof HTTP_CODE_ERROR_SERVER[keyof typeof HTTP_CODE_ERROR_SERVER];
+export type HTTPCodeServerError
+    = typeof HTTP_CODE_SERVER_ERROR[keyof typeof HTTP_CODE_SERVER_ERROR];
 
 export type HTTPCode = typeof HTTP_CODE[keyof typeof HTTP_CODE];
 
@@ -115,6 +115,6 @@ export const isHttpCodeInformation = (data: any): data is HTTPCodeInformation =>
 
 export const isHttpCodeRedirection = (data: any): data is HTTPCodeRedirection => Object.values(HTTP_CODE_REDIRECTION).includes(data);
 
-export const isHttpCodeClientError = (data: any): data is HTTPCodeErrorClient => Object.values(HTTP_CODE_ERROR_CLIENT).includes(data);
+export const isHttpCodeClientError = (data: any): data is HTTPCodeClientError => Object.values(HTTP_CODE_CLIENT_ERROR).includes(data);
 
-export const isHttpCodeServerError = (data: any): data is HTTPCodeErrorServer => Object.values(HTTP_CODE_ERROR_SERVER).includes(data);
+export const isHttpCodeServerError = (data: any): data is HTTPCodeServerError => Object.values(HTTP_CODE_SERVER_ERROR).includes(data);

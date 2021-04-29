@@ -1,7 +1,7 @@
 import {
   HTTP_CODE,
-  HTTP_CODE_ERROR_CLIENT,
-  HTTP_CODE_ERROR_SERVER,
+  HTTP_CODE_CLIENT_ERROR,
+  HTTP_CODE_SERVER_ERROR,
   HTTP_CODE_INFORMATION,
   HTTP_CODE_REDIRECTION,
   HTTP_CODE_SUCCESS, isHttpCodeClientError, isHttpCodeInformation, isHttpCodeRedirection, isHttpCodeServerError,
@@ -11,8 +11,8 @@ import {
 const successCodeDataset = Object.values(HTTP_CODE_SUCCESS).map((httpCode) => [httpCode]);
 const informationCodeDataset = Object.values(HTTP_CODE_INFORMATION).map((httpCode) => [httpCode]);
 const redirectionCodeDataset = Object.values(HTTP_CODE_REDIRECTION).map((httpCode) => [httpCode]);
-const clientErrorCodeDataset = Object.values(HTTP_CODE_ERROR_CLIENT).map((httpCode) => [httpCode]);
-const serverErrorCodeDataset = Object.values(HTTP_CODE_ERROR_SERVER).map((httpCode) => [httpCode]);
+const clientErrorCodeDataset = Object.values(HTTP_CODE_CLIENT_ERROR).map((httpCode) => [httpCode]);
+const serverErrorCodeDataset = Object.values(HTTP_CODE_SERVER_ERROR).map((httpCode) => [httpCode]);
 
 describe('http code information type guard', () => {
   test.each(informationCodeDataset)('should return true for information http code (%p)', (httpCode) => {
