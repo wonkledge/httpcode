@@ -34,6 +34,8 @@ httpcode is a small library to handle http code status convention.
 
 ​	`	HTTPCodeServerError`
 
+​	`	HTTPCode`
+
 
 
 ### HTTP Code type guard
