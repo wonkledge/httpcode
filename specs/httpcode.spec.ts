@@ -28,6 +28,10 @@ describe('http code information type guard', () => {
   ])('should return false for not information http code (%p)', (httpCode) => {
     expect(isHttpCodeInformation(httpCode)).toBeFalsy();
   });
+
+  test('should work with string', () => {
+    expect(isHttpCodeInformation('100')).toBeTruthy();
+  });
 });
 
 describe('http code success type guard', () => {
@@ -43,6 +47,10 @@ describe('http code success type guard', () => {
   // @ts-ignore
   ])('should return false for not success http code (%p)', (httpCode) => {
     expect(isHttpCodeSuccess(httpCode)).toBeFalsy();
+  });
+
+  test('should work with string', () => {
+    expect(isHttpCodeSuccess('200')).toBeTruthy();
   });
 });
 
@@ -60,6 +68,10 @@ describe('http code redirection type guard', () => {
   ])('should return false for not redirection http code (%p)', (httpCode) => {
     expect(isHttpCodeRedirection(httpCode)).toBeFalsy();
   });
+
+  test('should work with string', () => {
+    expect(isHttpCodeRedirection('300')).toBeTruthy();
+  });
 });
 
 describe('http code client error type guard', () => {
@@ -75,6 +87,10 @@ describe('http code client error type guard', () => {
     // @ts-ignore
   ])('should return false for not client error http code (%p)', (httpCode) => {
     expect(isHttpCodeClientError(httpCode)).toBeFalsy();
+  });
+
+  test('should work with string', () => {
+    expect(isHttpCodeClientError('400')).toBeTruthy();
   });
 });
 
@@ -92,6 +108,10 @@ describe('http code server error type guard', () => {
   ])('should return false for not server error http code (%p)', (httpCode) => {
     expect(isHttpCodeServerError(httpCode)).toBeFalsy();
   });
+
+  test('should work with string', () => {
+    expect(isHttpCodeServerError('500')).toBeTruthy();
+  });
 });
 
 describe('http code includes all type of http code', () => {
@@ -105,5 +125,9 @@ describe('http code includes all type of http code', () => {
   ])('should be include in HTTP_CODE (%p)', (httpCode) => {
     const HttpCodeValues = Object.values(HTTP_CODE);
     expect(HttpCodeValues.includes(httpCode)).toBeTruthy();
+  });
+
+  test('should work with string', () => {
+    expect(isHttpCodeInformation('100')).toBeTruthy();
   });
 });

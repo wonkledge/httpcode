@@ -109,12 +109,20 @@ export type HTTPCodeServerError
 
 export type HTTPCode = typeof HTTP_CODE[keyof typeof HTTP_CODE];
 
-export const isHttpCodeSuccess = (data: any): data is HTTPCodeSuccess => Object.values(HTTP_CODE_SUCCESS).includes(data);
+const castToNumber = (data: any): number | any => {
+  if (typeof data === 'string') {
+    return parseInt(data, 10);
+  }
 
-export const isHttpCodeInformation = (data: any): data is HTTPCodeInformation => Object.values(HTTP_CODE_INFORMATION).includes(data);
+  return data;
+};
 
-export const isHttpCodeRedirection = (data: any): data is HTTPCodeRedirection => Object.values(HTTP_CODE_REDIRECTION).includes(data);
+export const isHttpCodeSuccess = (data: any): data is HTTPCodeSuccess => Object.values(HTTP_CODE_SUCCESS).includes(castToNumber(data));
 
-export const isHttpCodeClientError = (data: any): data is HTTPCodeClientError => Object.values(HTTP_CODE_CLIENT_ERROR).includes(data);
+export const isHttpCodeInformation = (data: any): data is HTTPCodeInformation => Object.values(HTTP_CODE_INFORMATION).includes(castToNumber(data));
 
-export const isHttpCodeServerError = (data: any): data is HTTPCodeServerError => Object.values(HTTP_CODE_SERVER_ERROR).includes(data);
+export const isHttpCodeRedirection = (data: any): data is HTTPCodeRedirection => Object.values(HTTP_CODE_REDIRECTION).includes(castToNumber(data));
+
+export const isHttpCodeClientError = (data: any): data is HTTPCodeClientError => Object.values(HTTP_CODE_CLIENT_ERROR).includes(castToNumber(data));
+
+export const isHttpCodeServerError = (data: any): data is HTTPCodeServerError => Object.values(HTTP_CODE_SERVER_ERROR).includes(castToNumber(data));

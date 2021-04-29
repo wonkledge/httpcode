@@ -1,6 +1,6 @@
 {
   "name": "@wonkledge/httpcode",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./lib/src/index.js",
   "types": "./lib/src/index.d.ts",
   "keywords": ["enums","enumeration", "http", "http code", "convention"],
