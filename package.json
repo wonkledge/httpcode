@@ -1,11 +1,17 @@
 {
-  "name": "microservice-boilerplate",
+  "name": "@wonkledge/httpcode",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./lib/src/index.js",
+  "types": "./lib/src/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wonkledge/httpcode.git"
+  },
   "license": "MIT",
   "scripts": {
+    "prepublish": "tsc",
     "build": "tsc",
-    "dev": "tsc && node build/src/index.js",
+    "dev": "tsc && node lib/src/index.js",
     "test": "jest --watchAll"
   },
   "dependencies": {
